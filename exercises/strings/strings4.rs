@@ -5,26 +5,34 @@
 // you think each value is. That is, add either `string_slice` or `string`
 // before the parentheses on each line. If you're right, it will compile!
 //
-// No hints this time!
 
-// I AM NOT DONE
 
 fn string_slice(arg: &str) {
     println!("{}", arg);
 }
+
 fn string(arg: String) {
     println!("{}", arg);
 }
 
 fn main() {
-    ???("blue");
-    ???("red".to_string());
-    ???(String::from("hi"));
-    ???("rust is fun!".to_owned());
-    ???("nice weather".into());
-    ???(format!("Interpolation {}", "Station"));
-    ???(&String::from("abc")[0..1]);
-    ???("  hello there ".trim());
-    ???("Happy Monday!".to_string().replace("Mon", "Tues"));
-    ???("mY sHiFt KeY iS sTiCkY".to_lowercase());
+    // Using string_slice for &str
+    string_slice("blue");
+    string_slice("red");
+
+    // Using string for String type
+    string("hi".to_string());
+    string(String::from("rust is fun!"));
+    string("nice weather".into());
+
+    // Using string for String type
+    string(format!("Interpolation {}", "Station"));
+
+    // Using string_slice for &str
+    string_slice(&String::from("abc")[0..1]);
+    string_slice("  hello there ".trim());
+    
+    // Using string for String type
+    string("Happy Monday!".to_string().replace("Mon", "Tues"));
+    string("mY sHiFt KeY iS sTiCkY".to_lowercase());
 }
